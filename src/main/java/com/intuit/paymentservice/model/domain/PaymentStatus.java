@@ -1,6 +1,7 @@
-package com.intuit.paymentservice.repository.entity;
+package com.intuit.paymentservice.model.domain;
 
 public enum PaymentStatus {
+    ERROR("ERROR"),
     PLACED("PLACED"),
     APPROVED("APPROVED"),
     DECLINED("DECLINED");

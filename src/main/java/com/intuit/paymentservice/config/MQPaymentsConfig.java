@@ -41,14 +41,6 @@ public class MQPaymentsConfig {
         return new TopicExchange(NEW_PAYMENTS_EXCHANGE);
     }
 
-//    @Bean
-//    public Binding binding(Queue queue,TopicExchange exchange){
-//        return BindingBuilder
-//                .bind(queue)
-//                .to(exchange)
-//                .with(NEW_PAYMENT_ROUTING_KEY);
-//    }
-
     @Bean
     Binding binding1(@Qualifier("queue1") Queue queue, TopicExchange exchange) {
         return BindingBuilder

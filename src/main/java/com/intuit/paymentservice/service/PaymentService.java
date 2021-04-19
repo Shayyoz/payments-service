@@ -1,7 +1,10 @@
 package com.intuit.paymentservice.service;
 
-import com.intuit.paymentservice.model.domain.PaymentRequest;
+import com.intuit.paymentservice.model.dto.PaymentRequestDto;
+import com.intuit.paymentservice.model.dto.PaymentRequestResultDto;
 
 public interface PaymentService {
-    PaymentRequest createPayment(PaymentRequest paymentRequest);
+    PaymentRequestResultDto createPayment(PaymentRequestDto paymentRequestDto);
+
+//    List<PayeeDto> getPayees(Integer paymentId);
 }

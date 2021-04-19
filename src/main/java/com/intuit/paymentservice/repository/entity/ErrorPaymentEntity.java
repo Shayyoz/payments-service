@@ -4,46 +4,29 @@ import com.intuit.paymentservice.model.domain.PaymentStatus;
 import com.intuit.paymentservice.model.domain.PaymentType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.util.UUID;
 
 @Data
 @AllArgsConstructor
 @Entity
 @Table(name="Payments")
-public class PaymentEntity {
-
+public class ErrorPaymentEntity {
     @Id
-    @GeneratedValue(generator = "uuid2")
-    @GenericGenerator(name = "uuid2", strategy = "uuid2")
     @Column(length = 64)
     private String paymentId;
-    private Double amount;
-    private String currency;
-
-//    @OneToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "userId")
-//    private UserEntity userId;
-//
-//    @OneToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "userId")
-//    private UserEntity payeeId;
-    private String userId;
     private String payeeId;
-
+    private String userId;
+    private String currency;
+    private Double amount;
     private String paymentMethodId;
+    private PaymentType paymentType;
+    private Double riskAssessment;
 
     @Enumerated(EnumType.STRING)
     private PaymentStatus status;
 
-    @Enumerated(EnumType.STRING)
-    private PaymentType paymentType;
-
-    private Double riskAssessment;
-
-    public PaymentEntity() {
+    public ErrorPaymentEntity() {
     }
 
     public String getPaymentId() {

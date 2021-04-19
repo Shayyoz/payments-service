@@ -1,22 +1,48 @@
 package com.intuit.paymentservice.model.domain;
 
-import com.intuit.paymentservice.repository.entity.PaymentStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Data
 @AllArgsConstructor
 @ToString
-public class PaymentRequest {
+public class PaymentRequestDmn {
+    private String paymentId;
     private String payeeId;
     private String userId;
     private String currency;
     private Double amount;
     private String paymentMethodId;
+    private PaymentType paymentType;
+    private Double riskAssessment;
 
-    public PaymentRequest() {
+
+    public PaymentRequestDmn() {
+    }
+
+    public String getPaymentId() {
+        return paymentId;
+    }
+
+    public void setPaymentId(String paymentId) {
+        this.paymentId = paymentId;
+    }
+
+    public Double getRiskAssessment() {
+        return riskAssessment;
+    }
+
+    public void setRiskAssessment(Double riskAssessment) {
+        this.riskAssessment = riskAssessment;
+    }
+
+    public PaymentType getPaymentType() {
+        return paymentType;
+    }
+
+    public void setPaymentType(PaymentType paymentType) {
+        this.paymentType = paymentType;
     }
 
     public String getPayeeId() {
