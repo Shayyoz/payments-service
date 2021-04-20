@@ -5,6 +5,4 @@ import com.intuit.paymentservice.model.dto.PaymentRequestResultDto;
 
 public interface PaymentService {
     PaymentRequestResultDto createPayment(PaymentRequestDto paymentRequestDto);
-
-//    List<PayeeDto> getPayees(Integer paymentId);
 }

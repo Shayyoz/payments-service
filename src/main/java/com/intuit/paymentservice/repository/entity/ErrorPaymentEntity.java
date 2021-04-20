@@ -20,6 +20,7 @@ public class ErrorPaymentEntity {
     private String currency;
     private Double amount;
     private String paymentMethodId;
+    @Enumerated(EnumType.STRING)
     private PaymentType paymentType;
     private Double riskAssessment;
 

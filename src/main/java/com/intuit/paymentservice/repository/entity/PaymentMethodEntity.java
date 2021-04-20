@@ -1,5 +1,6 @@
 package com.intuit.paymentservice.repository.entity;
 
+import com.intuit.paymentservice.model.domain.PaymentMethodType;
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,10 +18,14 @@ public class PaymentMethodEntity {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
+    @Column(length = 64)
     private String methodId;
 
     private String userId;
     private String maskedNumber;
+
+    @Enumerated(EnumType.STRING)
+    private PaymentMethodType paymentMethodType;
 
     public PaymentMethodEntity() {
     }

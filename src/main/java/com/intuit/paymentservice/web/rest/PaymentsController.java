@@ -21,7 +21,7 @@ public class PaymentsController {
     private final UsersService usersService;
 
     @PostMapping(value = "/createPayment", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<PaymentRequestResultDto> saveTournamentResults(@RequestBody PaymentRequestDto request){
+    public ResponseEntity<PaymentRequestResultDto> saveTournamentResults(@RequestBody PaymentRequestDto request) {
         return  ResponseEntity.status(HttpStatus.CREATED).body(paymentService.createPayment(request));
     }
 
